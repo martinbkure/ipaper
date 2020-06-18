@@ -21,10 +21,10 @@ function FontRenderer() {
 
   return (
     <div>
-      <input type="number" onChange={event => setWidth(Number(event.target.value)) } placeholder="width"></input>
-      <input type="number" onChange={event => setHeight(Number(event.target.value)) } placeholder="height"></input>
-      <input type="text" placeholder="text" onChange={event => setText(event.target.value) }></input>
-      <select onChange={event => setFont(event.target.value) }>
+      <input type="number" onChange={(event: React.ChangeEvent<HTMLInputElement>) => setWidth(Number(event.target.value)) } placeholder="width"></input>
+      <input type="number" onChange={(event: React.ChangeEvent<HTMLInputElement>) => setHeight(Number(event.target.value)) } placeholder="height"></input>
+      <input type="text" placeholder="text" onChange={(event: React.ChangeEvent<HTMLInputElement>) => setText(event.target.value) }></input>
+      <select onChange={(event: React.ChangeEvent<HTMLSelectElement>) => setFont(event.target.value) }>
         <option value="Verdana">Verdana</option>
         <option value="Ariel">Ariel</option>
         <option value="Times New Roman">Times New Roman</option>

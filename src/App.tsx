@@ -4,8 +4,8 @@ import ReactSlider from 'react-slider';
 import FontRenderer from './FontRendere';
 
 function calculateFlipBooksPrice(flipBooks: number): number {
-  let calculatedPrice = 0;
-  let i;
+  let calculatedPrice: number = 0;
+  let i: number;
   for (i = 1; i <= flipBooks; i++) {
     if(i < 6) {
       calculatedPrice += 5;
@@ -18,9 +18,9 @@ function calculateFlipBooksPrice(flipBooks: number): number {
   return calculatedPrice;
 }
 
-function getIncludedSessions(flipBooks: number): number {
-  let sessions = 0;
-  let i;
+function calculateIncludedSessions(flipBooks: number): number {
+  let sessions: number = 0;
+  let i: number;
   for (i = 1; i <= flipBooks; i++) {
     if(i < 6) {
       sessions += 2000;
@@ -35,7 +35,7 @@ function getIncludedSessions(flipBooks: number): number {
 
 function calculateExtraSessionsPrice(sessions: number): number {
   let calculatedPrice: number = 0;
-  let i;
+  let i: number;
 
   // include sessions that doesn't add up to 1000
   const sessionNotEqualToThousand: number = sessions % 1000; 
@@ -63,7 +63,7 @@ function App() {
     
     let sessionsPrice = 0;
     const flipBooksPrice: number = calculateFlipBooksPrice(flipBooks);
-    const includedSessions: number = getIncludedSessions(flipBooks);
+    const includedSessions: number = calculateIncludedSessions(flipBooks);
     if(includedSessions < sessions){
       sessionsPrice = calculateExtraSessionsPrice(sessions - includedSessions);
     }
